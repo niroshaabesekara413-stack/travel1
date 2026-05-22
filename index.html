@@ -1,0 +1,642 @@
+
+# Create the complete monetized Travel Guys website with all monetization features
+# This is a comprehensive update to the original files
+
+html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Travel Guys - Explore the world's most amazing destinations. Discover famous places, hidden gems, travel guides, hotel bookings, flight deals, and unforgettable adventures.">
+    <meta name="keywords" content="travel, destinations, tourism, vacation, adventure, famous places, travel guides, hotels, flights, travel deals, travel insurance">
+    <meta name="author" content="Travel Guys">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Travel Guys - Explore The World's Most Amazing Destinations">
+    <meta property="og:description" content="Discover famous places, hidden gems, travel guides, hotel bookings, flight deals, and unforgettable adventures.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80">
+    <meta property="og:url" content="https://travelguys.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Travel Guys - Explore The World">
+    <meta name="twitter:description" content="Discover famous places, hidden gems, and unforgettable adventures.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Travel Guys",
+        "url": "https://travelguys.com",
+        "logo": "https://travelguys.com/logo.png",
+        "description": "Your ultimate travel companion for discovering the world's most amazing destinations.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Adventure Avenue",
+            "addressLocality": "Travel City",
+            "addressRegion": "TC",
+            "postalCode": "10001",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "customer service",
+            "email": "hello@travelguys.com"
+        },
+        "sameAs": [
+            "https://facebook.com/travelguys",
+            "https://twitter.com/travelguys",
+            "https://instagram.com/travelguys",
+            "https://youtube.com/travelguys"
+        ]
+    }
+    </script>
+    
+    <title>Travel Guys - Explore The World's Most Amazing Destinations | Hotels, Flights & Travel Deals</title>
+    <link rel="canonical" href="https://travelguys.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics (Replace GA_MEASUREMENT_ID with your actual ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Google AdSense (Replace ca-pub-XXXXXXXXXXXXXXXX with your actual publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" itemprop="url">
+                <i class="fas fa-plane-departure"></i>
+                <span itemprop="name">Travel Guys</span>
+            </a>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" itemprop="url">Home</a></li>
+                <li><a href="#destinations" class="nav-link" itemprop="url">Destinations</a></li>
+                <li><a href="#famous-places" class="nav-link" itemprop="url">Famous Places</a></li>
+                <li><a href="#deals" class="nav-link" itemprop="url">Travel Deals</a></li>
+                <li><a href="#blog" class="nav-link" itemprop="url">Travel Blog</a></li>
+                <li><a href="#gallery" class="nav-link" itemprop="url">Gallery</a></li>
+                <li><a href="#about" class="nav-link" itemprop="url">About</a></li>
+                <li><a href="#contact" class="nav-link" itemprop="url">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal-up" itemprop="headline">
+                Explore The World's Most Amazing Destinations
+            </h1>
+            <p class="hero-subtitle reveal-up" itemprop="description">
+                Discover famous places, hidden gems, hotel deals, flight offers, and unforgettable adventures.
+            </p>
+            
+            <!-- Affiliate Search Widget -->
+            <div class="hero-search reveal-up">
+                <div class="search-tabs">
+                    <button class="search-tab active" data-tab="hotels"><i class="fas fa-hotel"></i> Hotels</button>
+                    <button class="search-tab" data-tab="flights"><i class="fas fa-plane"></i> Flights</button>
+                    <button class="search-tab" data-tab="packages"><i class="fas fa-suitcase"></i> Packages</button>
+                </div>
+                <div class="search-box">
+                    <div class="search-field">
+                        <i class="fas fa-map-marker-alt search-icon"></i>
+                        <input type="text" id="heroSearch" placeholder="Where do you want to go?" autocomplete="off">
+                    </div>
+                    <div class="search-field date-field">
+                        <i class="fas fa-calendar-alt search-icon"></i>
+                        <input type="date" id="checkInDate">
+                    </div>
+                    <div class="search-field date-field">
+                        <i class="fas fa-calendar-check search-icon"></i>
+                        <input type="date" id="checkOutDate">
+                    </div>
+                    <button class="search-btn" id="searchBtn" onclick="handleAffiliateSearch()">
+                        <span>Search</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Quick Affiliate Links -->
+            <div class="hero-affiliate-links reveal-up">
+                <a href="#" class="affiliate-chip" data-affiliate="booking" rel="nofollow sponsored">
+                    <i class="fas fa-bed"></i> Book Hotels
+                </a>
+                <a href="#" class="affiliate-chip" data-affiliate="flights" rel="nofollow sponsored">
+                    <i class="fas fa-plane-departure"></i> Find Flights
+                </a>
+                <a href="#" class="affiliate-chip" data-affiliate="insurance" rel="nofollow sponsored">
+                    <i class="fas fa-shield-alt"></i> Travel Insurance
+                </a>
+                <a href="#" class="affiliate-chip" data-affiliate="deals" rel="nofollow sponsored">
+                    <i class="fas fa-tags"></i> Hot Deals
+                </a>
+            </div>
+            
+            <a href="#destinations" class="hero-cta reveal-up">
+                <span>Explore Now</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Ad Placement: Below Hero -->
+    <div class="ad-container ad-hero-below" aria-label="Advertisement">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder ad-responsive">
+            <span><i class="fas fa-ad"></i> Responsive Ad Space - 728x90 / 320x50</span>
+            <!-- Google AdSense Code Placeholder -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="HERO_BELOW_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- Featured Destinations Section -->
+    <section class="destinations" id="destinations" itemscope itemtype="https://schema.org/ItemList">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Popular Destinations</span>
+                <h2 class="section-title" itemprop="name">Featured Destinations</h2>
+                <p class="section-desc">Explore our handpicked selection of the world's most breathtaking destinations</p>
+            </div>
+            
+            <!-- Sidebar Ad (Desktop Only) -->
+            <div class="content-with-sidebar">
+                <div class="main-content">
+                    <div class="destinations-filter reveal-up">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="asia">Asia</button>
+                        <button class="filter-btn" data-filter="europe">Europe</button>
+                        <button class="filter-btn" data-filter="middle-east">Middle East</button>
+                        <button class="filter-btn" data-filter="island">Islands</button>
+                    </div>
+                    <div class="destinations-grid" id="destinationsGrid">
+                        <!-- Destination cards rendered by JS -->
+                    </div>
+                </div>
+                
+                <!-- Sidebar Ad Section -->
+                <aside class="sidebar-ad" aria-label="Sidebar advertisement">
+                    <div class="ad-container">
+                        <div class="ad-label">Sponsored</div>
+                        <div class="ad-placeholder ad-sidebar">
+                            <span><i class="fas fa-ad"></i> Sidebar Ad - 300x600 / 300x250</span>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                 data-ad-slot="SIDEBAR_SLOT"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Widget in Sidebar -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3><i class="fas fa-paper-plane"></i> Travel Newsletter</h3>
+                        <p>Get exclusive deals and travel inspiration delivered to your inbox!</p>
+                        <form class="sidebar-newsletter-form" id="sidebarNewsletterForm">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <small>No spam, unsubscribe anytime.</small>
+                    </div>
+                    
+                    <!-- Popular Deals Widget -->
+                    <div class="sidebar-widget deals-widget">
+                        <h3><i class="fas fa-fire"></i> Trending Deals</h3>
+                        <div class="sidebar-deals" id="sidebarDeals">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-Content Ad -->
+    <div class="ad-container ad-in-content" aria-label="Advertisement">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder ad-responsive">
+            <span><i class="fas fa-ad"></i> In-Content Ad - Responsive</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="IN_CONTENT_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- Famous Places Section -->
+    <section class="famous-places" id="famous-places">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Iconic Landmarks</span>
+                <h2 class="section-title">Famous Places</h2>
+                <p class="section-desc">Visit the world's most iconic landmarks and architectural marvels</p>
+            </div>
+            <div class="famous-grid" id="famousGrid">
+                <!-- Famous places cards rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Deals Section -->
+    <section class="deals" id="deals">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Limited Time Offers</span>
+                <h2 class="section-title">Popular Travel Deals</h2>
+                <p class="section-desc">Exclusive discounts and unbeatable offers from our trusted partners</p>
+            </div>
+            <div class="deals-grid" id="dealsGrid">
+                <!-- Deals cards rendered by JS -->
+            </div>
+            <div class="deals-cta reveal-up">
+                <a href="#" class="btn-primary" data-affiliate="all-deals" rel="nofollow sponsored">
+                    <i class="fas fa-external-link-alt"></i> View All Travel Deals
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Travel Types</span>
+                <h2 class="section-title">Travel Categories</h2>
+                <p class="section-desc">Find your perfect travel style and explore destinations that match your passion</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Category cards rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Visual Journey</span>
+                <h2 class="section-title">Travel Gallery</h2>
+                <p class="section-desc">A visual collection of stunning travel moments from around the globe</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery images rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img src="" alt="Gallery image" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Travel Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Travel Stories</span>
+                <h2 class="section-title">Travel Blog</h2>
+                <p class="section-desc">Expert guides, destination insights, and travel inspiration from our team</p>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog cards rendered by JS -->
+            </div>
+            <div class="blog-cta reveal-up">
+                <a href="#" class="btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-Content Ad 2 -->
+    <div class="ad-container ad-in-content" aria-label="Advertisement">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder ad-responsive">
+            <span><i class="fas fa-ad"></i> In-Content Ad - Responsive</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="IN_CONTENT_2_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- Travel Tips Section -->
+    <section class="tips" id="tips">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Expert Advice</span>
+                <h2 class="section-title">Travel Tips</h2>
+                <p class="section-desc">Essential tips to make your journey smoother, safer, and more enjoyable</p>
+            </div>
+            <div class="tips-grid" id="tipsGrid">
+                <!-- Tips cards rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats" id="stats">
+        <div class="stats-bg">
+            <div class="stats-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Traveler Stories</span>
+                <h2 class="section-title">What Travelers Say</h2>
+                <p class="section-desc">Real experiences from our community of passionate travelers</p>
+            </div>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <!-- Testimonials rendered by JS -->
+            </div>
+            <div class="testimonials-nav">
+                <button class="testimonial-dot active" data-index="0" aria-label="Go to testimonial 1"></button>
+                <button class="testimonial-dot" data-index="1" aria-label="Go to testimonial 2"></button>
+                <button class="testimonial-dot" data-index="2" aria-label="Go to testimonial 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" itemscope itemtype="https://schema.org/AboutPage">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="about-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Travel adventure" loading="lazy">
+                        <div class="about-img-badge">
+                            <span class="badge-number">10+</span>
+                            <span class="badge-text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Your Trusted Travel Companion</h2>
+                    <p class="about-text">
+                        Travel Guys has been inspiring wanderlust and curating extraordinary travel experiences since 2014. We believe that travel is the only thing you buy that makes you richer.
+                    </p>
+                    <p class="about-text">
+                        Our team of passionate travelers and local experts work tirelessly to bring you authentic experiences, hidden gems, and practical advice that transforms ordinary trips into unforgettable adventures.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Curated Destinations</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Local Expert Guides</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Travel Support</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Best Price Guarantee</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have questions or need help planning your next adventure? We'd love to hear from you!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Office</h3>
+                        <p>123 Adventure Avenue, Travel City, TC 10001</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>hello@travelguys.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your travel plans..." required></textarea>
+                            <span class="form-error" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Thank you! Your message has been sent successfully.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Ad -->
+    <div class="ad-container ad-footer" aria-label="Advertisement">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder ad-responsive">
+            <span><i class="fas fa-ad"></i> Footer Ad - Responsive</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="FOOTER_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--footer-bg)"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo" itemprop="url">
+                        <i class="fas fa-plane-departure"></i>
+                        <span itemprop="name">Travel Guys</span>
+                    </a>
+                    <p class="footer-desc" itemprop="description">
+                        Your ultimate travel companion for discovering the world's most amazing destinations, hidden gems, and unforgettable adventures.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook" itemprop="sameAs"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter" itemprop="sameAs"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube" itemprop="sameAs"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" aria-label="Pinterest" itemprop="sameAs"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#famous-places">Famous Places</a></li>
+                        <li><a href="#deals">Travel Deals</a></li>
+                        <li><a href="#blog">Travel Blog</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Travel Resources</h3>
+                    <ul>
+                        <li><a href="#tips">Travel Tips</a></li>
+                        <li><a href="#" data-affiliate="insurance" rel="nofollow sponsored">Travel Insurance</a></li>
+                        <li><a href="#" data-affiliate="flights" rel="nofollow sponsored">Flight Booking</a></li>
+                        <li><a href="#" data-affiliate="hotels" rel="nofollow sponsored">Hotel Reservations</a></li>
+                        <li><a href="#" data-affiliate="packages" rel="nofollow sponsored">Tour Packages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Subscribe to get the latest travel deals and inspiration.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div class="footer-affiliate-links">
+                        <p class="affiliate-disclaimer">
+                            <small>Some links are affiliate links. We may earn a commission at no extra cost to you.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> Travel Guys. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Affiliate Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+'''
+
+with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("index.html created successfully!")
+print(f"File size: {len(html_content)} characters")
